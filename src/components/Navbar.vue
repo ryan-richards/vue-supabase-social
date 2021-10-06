@@ -4,11 +4,13 @@
     <n-space justify="space-between" >
 <n-h2 align="left">Social Feed</n-h2> 
 <n-menu v-model:value="activeKey" mode="horizontal" :options="menuOptions" v-if="!(isMobile || isTablet)"/>
-  <n-dropdown
+
+<n-dropdown
     v-if="isMobile || isTablet"
     trigger="click"
     :options="menuOptions"
     :show-arrow="true"
+    placement="bottom-end"
   >
 <n-button>
       <template #icon>
@@ -17,7 +19,8 @@
         </n-icon>
       </template>
     </n-button>
-  </n-dropdown>
+</n-dropdown>
+
     </n-space>
 </n-layout-header>
 </n-layout>
@@ -84,6 +87,7 @@ components: {
 
 
     return {
+      overlap: ref(false),
       activeKey: ref(null),
       isMobile: isMobileRef,
       isTablet: isTabletRef,

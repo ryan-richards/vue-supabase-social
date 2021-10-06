@@ -5,7 +5,7 @@
 
     <n-input-group justify="start" >
       <n-input
-      style="min-width:300px;max-width:400px;"
+      style="min-width:250px;max-width:250px;"
       v-model:value="postValue"
       placeholder="Post"
       type="textarea"
