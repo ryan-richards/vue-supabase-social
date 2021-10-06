@@ -1,10 +1,10 @@
 <template>
-  <h1>{{ user.username }}</h1>
-  <button v-if="!followed && store.user.id != user.id" @click="follow">Follow User</button>
-  <button v-else @click="unfollow">Unfollow</button>
+  <n-h1>{{ user.username }}</n-h1>
+  <n-button v-if="!followed && store.user.id != user.id" @click="follow">Follow User</n-button>
+  <n-button v-else @click="unfollow">Unfollow</n-button>
 
   <div v-for="post in postList" :key="post.id">
-    <p>{{ post.post }}</p>
+    <n-p>{{ post.post }}</n-p>
   </div>
 </template>
 
@@ -48,7 +48,7 @@ export default {
         let { data, error } = await supabase
           .from("posts")
           .select("*")
-          .eq("user", route.params.id);
+          .eq("userID", route.params.id);
         console.log(data);
         if (data) {
           postList.value = data;

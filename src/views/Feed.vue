@@ -24,7 +24,7 @@
     <n-card size="small">
       <n-space justify="center">
         <n-p>{{post.post}}</n-p>
-        <router-link :to="`/user/${post.user}`">
+        <router-link :to="`/user/${post.userID}`">
         <n-a>{{ post.profiles.username }}</n-a>
         </router-link>
       </n-space>
